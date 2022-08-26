@@ -1,0 +1,201 @@
+$clr-title: #f8c401;
+$clr-text-icons: #6bdbff;
+$clr-bg-form: transparent;
+$clr-txt-form: #FFFFFF;
+
+$font-Gblack: 'Gilroy Black';
+$font-GRegular: 'Gilroy Regular';
+$font-Glight: 'Gilroy Light';
+$font-GMItalic: 'Gilroy MItalic';
+
+// *{outline: 1px solid white !important;}
+
+body {
+    background-image: url(../imgs/bg-dubai.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main {
+    width: 100%;
+    height: auto;
+    .content-contato {
+        margin: 60px 0;
+        h1 {
+            color: $clr-txt-form;
+            font-family: $font-GRegular;
+            font-size: 1.06rem;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        
+        h4{
+            color: $clr-txt-form;
+            font-family: $font-GRegular;
+            font-size: 1rem;
+            margin-top: 20px;
+            
+        }
+
+        .form-row {
+            margin: 10px 0;
+        }
+        .content-wedo {
+            position: relative;
+            
+            .passos {
+                max-width: 430px;
+            }
+
+            .fleet {
+                position: relative;
+                margin: 30px 0 ;
+                @media(min-width: 768px) {
+                    position: absolute;
+                    top: 50%;
+                    right: 20px;
+                    // width: initial;
+                    transform: translateY(-50%);
+                    margin: 0;
+                }
+            }
+        }
+
+        .content-form-wedo {
+            background-color: rgba(0, 0, 0, 0.35);
+            border-radius: 10px;
+            padding: 30px;
+            
+            textarea, input, select, button {
+                box-shadow: 0 0 0 0;
+                border: 0 none;
+                outline: 0;
+            } 
+
+            form {
+
+                input[type="text"], input[type="email"], input[type="tel"] {
+                    font-size: 15px;
+                    &.error {
+                        border: 2px solid red;
+                    }
+                }
+
+                input[type=checkbox] {
+                    &.error {
+                        box-shadow: 200px 200px 5px 200px rgba(255,0,0,0.75) inset;
+                    }
+                }
+                
+                .form-check-inline {
+                    margin: 0;
+                }
+                input[type=text],
+                input[type=email],
+                input[type=tel], 
+                input[type=checkbox] {
+                    color: #fff;
+                    background-color: $clr-bg-form;
+                    border-bottom: $clr-text-icons 1px solid;
+
+                    &::placeholder{
+                        color: #fff;
+                        font-family: $font-GRegular;
+                    }
+                }
+                input[name=nomeCompleto],
+                input[name=email],
+                input[name=tel] {
+                    width: 100%;
+                    margin-top: 10px;
+                }
+
+                label {
+                    color: #fff;
+
+                }
+
+                .form-row {
+                    &.checks {
+                        flex-wrap: nowrap;
+                    }
+                }
+
+                .btn-sub {
+                    .col-md-12 {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 20px auto 20px;
+                        
+                        button[type=submit] {
+                            background-color: $clr-text-icons;
+                            padding: 11px 20px;
+                            border-radius: 5px;
+                            color: #474A51;
+                            font-family: 'Gilroy Bold';
+                            cursor: pointer;
+                            transition: all .3s;
+
+                            &:hover {
+                                background-color: #1f2a68;
+                                color: $clr-txt-form ;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+
+   .success {
+       display: none;
+       color: #f8c401;
+        text-transform: uppercase;
+   }
+
+   .loader {
+       display: none;
+        .lds-ring {
+            display: inline-block;
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        .lds-ring div {
+          box-sizing: border-box;
+          display: block;
+          position: absolute;
+          width: 64px;
+          height: 64px;
+          margin: 8px;
+          border: 8px solid #26c980;
+          border-radius: 50%;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          border-color: #26c980 transparent transparent transparent;
+        }
+        .lds-ring div:nth-child(1) {
+          animation-delay: -0.45s;
+        }
+        .lds-ring div:nth-child(2) {
+          animation-delay: -0.3s;
+        }
+        .lds-ring div:nth-child(3) {
+          animation-delay: -0.15s;
+        }
+        @keyframes lds-ring {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+   }
+
+
+}
