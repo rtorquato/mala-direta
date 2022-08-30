@@ -21,7 +21,7 @@ body {
     width: 100%;
     height: auto;
     .content-contato {
-        margin: 60px 0;
+        padding: 60px 0;
         h1 {
             color: $clr-txt-form;
             font-family: $font-GRegular;
@@ -153,9 +153,10 @@ body {
 
 
    .success {
-       display: none;
-       color: #f8c401;
+        display: none;
+        color: #f8c401;
         text-transform: uppercase;
+        text-align: center;
    }
 
    .loader {

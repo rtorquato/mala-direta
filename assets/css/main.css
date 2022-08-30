@@ -60,7 +60,7 @@ body {
   height: auto;
 }
 .main .content-contato {
-  margin: 60px 0;
+  padding: 60px 0;
 }
 .main .content-contato h1 {
   color: #FFFFFF;
@@ -177,6 +177,7 @@ body {
   display: none;
   color: #f8c401;
   text-transform: uppercase;
+  text-align: center;
 }
 .main .loader {
   display: none;
