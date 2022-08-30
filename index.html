@@ -18,46 +18,49 @@
         <section class="content-contato">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 content-form-wedo">
-                        <div class="row">
+                    <div class="col-md-5 content-form-wedo" style="">
+                        <!-- <div class="row">
                             <div class="col-md-12">
                                 <h1><span class="persona"></span><br />Obrigado pelo contato!</h1>
                                 <h4>Para dar continuidade do processo, pedimos que nos envie seu nome completo e telefone para que um consultor entre encontato.</h1>
                             </div>
-                        </div>
-                        <form id="formContatoVenda" action="javascript:void(0);" method="post">
-                            <div class="form-row">
-                                <div class="form-group col-md-12">
-                                    <input type="text" name="nomeCompleto" id="nomeCompleto" placeholder="Nome Completo" class="">
+                        </div> -->
+                        <form id="formContato" action="javascript:void(0);" method="post">
+                            <div class="form-row" style="opacity: 0;height: 0;">
+                                <div class="form-group col-md-2">
+                                    <input type="text" name="id" id="id" placeholder="Id" class="">
+                                </div>
+                                <div class="form-group col-md-8">
+                                    <input type="text" name="nome" id="nome" placeholder="Nome" class="">
                                 </div>
                             </div>
 
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-group col-md-8">
                                     <input type="email" name="email" id="email" placeholder="E-mail">
                                 </div>
                                 <div class="form-group col-md-4">
                                     <input type="tel" name="tel" id="tel" placeholder="Telefone" minlength="15">
                                 </div>
-                            </div>              
+                            </div>               -->
 
-                            <div class="form-row">
+                            <!-- <div class="form-row">
                                 <div class="form-check form-check-inline col-md-12">
                                     <input class="form-check-input aceite" name="aceiteContato" type="checkbox" id="aceite" value="sim">
                                     <label class="form-check-label" for="aceite">Aceito que um consultor entre em contato.</label>
                                 </div>
-                            </div>
+                            </div> -->
                             
                             <div class="warning"></div>
                             <div class="success"></div>
                             <div class="form-row btn-sub">
                                 <div class="col-md-12">
-                                    <button type="submit" id="submit">RECEBER CONTATO</button>
+                                    <button type="submit" id="submit" style="opacity: 0;">RECEBER CONTATO</button>
                                     <div class="loader">
                                         <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
                                     </div>
                                     <div class="success">
-                                        Dados enviado com sucesso!
+                                        Obrigado pelo contato,<br />em breve entraremos em contato.
                                     </div>
                                 </div>
                             </div>
@@ -77,20 +80,10 @@
         let urlClientID = url.searchParams.get("clientId");
         let urlNameClient = url.searchParams.get("nameClient");
         
-        console.log(urlClientID);
-        console.log(urlNameClient);
 
-        let txt = document.querySelector('.persona');
-        console.log(urlNameClient);
-        txt.innerHTML = urlNameClient;
-
-        setTimeout(() => {
-            // window.location.href = "https://www.google.com"
-        }, 1000);
-
-        
-
-
+        document.getElementById('id').value = urlClientID;
+        document.getElementById('nome').value = urlNameClient;
+    
     </script>
     
     <script type="text/javascript" src="assets/slick/slick.js" charset="utf-8"></script>

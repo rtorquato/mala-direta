@@ -8,10 +8,11 @@ use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php';
 
-$nome_completo = $_POST['nome_completo'];
-$email = $_POST['email'];
-$tel = $_POST['tel'];
-$aceiteContato = $_POST['aceiteContato'];
+$nome_completo = $_POST['nome'];
+$id = $_POST['id'];
+// $email = $_POST['email'];
+// $tel = $_POST['tel'];
+// $aceiteContato = $_POST['aceiteContato'];
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -37,19 +38,24 @@ try {
     // E-mails do cliente 
     
     $mail->addAddress('rtorquato.santos@gmail.com');
-    $mail->addAddress('brevvi@momapro.com.br');
+    $mail->addAddress('celso.junior@topservicetur.com.br');
+    $mail->addAddress('brevvi@gmail.com');
 
     // // $mail->addBCC('bcc@example.com');
     // $mail->addReplyTo('info@example.com', 'Information');
     //Content
     $mail->isHTML(true);
-    $mail->Subject = 'Contato - teste';
+    $mail->Subject = 'QrCode escaneado';
 
-    $mail->Body     = '<b>Dados do Lead</b><br />';
+    $mail->Body     = '<b>Seu QrCode foi escaneado.</b><br />Segue os dados:<br />';
+    
+    $mail->Body    .= '<b>ID:</b> '.$id.'<br />';
     $mail->Body    .= '<b>Nome:</b> '.$nome_completo.'<br />';
-    $mail->Body    .= '<b>Telefone:</b> '.$tel.'<br />';
-    $mail->Body    .= '<b>E-mail do Cliente:</b> '.$email.'<br />';
-    $mail->Body    .= '<b>Aceita que um consultor entre em contato..:</b> '.$aceiteContato.'<br />';
+    
+    
+    // $mail->Body    .= '<b>Telefone:</b> '.$tel.'<br />';
+    // $mail->Body    .= '<b>E-mail do Cliente:</b> '.$email.'<br />';
+    // $mail->Body    .= '<b>Aceita que um consultor entre em contato..:</b> '.$aceiteContato.'<br />';
     
 
     $mail->send();
