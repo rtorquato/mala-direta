@@ -5,7 +5,7 @@
 //   var myForm = $('#formContatoVenda');
 
 //   $("#formContatoVenda").validate({
-  
+
 //     rules: {
 //       nomeCompleto: {
 //         required: true
@@ -30,19 +30,19 @@
 // });
 
 //   $('#submit').on('click', function() {
-    
+
 //     var nome = $('#nomeCompleto');
 //     var telefone = $('#tel');
 //     var email = $('#email');
 //     var aceite = $('#aceite');
-    
+
 //     var form = new FormData();
 
 //     form.append('nome_completo', nome.val());
 //     form.append('tel', telefone.val());
 //     form.append('email', email.val());
 //     form.append('aceiteContato', aceite.is(':checked') ? 'sim': 'não');
-    
+
 //     var settings = {
 //       "async": true,
 //       "crossDomain": true,
@@ -54,7 +54,7 @@
 //       "mimeType": "multipart/form-data",
 //       "data": form
 //     };
-    
+
 //     if (myForm.valid()) {
 //       $('#submit').hide();
 //       $('.loader').css('display', 'block');
@@ -72,12 +72,12 @@
 // });
 
 
-$(function(){
+$(function () {
 
   var myForm = $('#formContato');
 
   $("#formContato").validate({
-  
+
     rules: {
       id: {
         required: true
@@ -87,21 +87,21 @@ $(function(){
       }
     },
     messages: {
-      nome: "",
-      id: ""
+      id: "",
+      nome: ""
     }
-});
+  });
 
-  $('#submit').on('click', function() {
-    
+  $('#submit').on('click', function () {
+
     var nome = $('#nome');
     var id = $('#id');
-    
+
     var form = new FormData();
 
     form.append('nome', nome.val());
     form.append('id', id.val());
-    
+
     var settings = {
       "async": true,
       "crossDomain": true,
@@ -113,7 +113,7 @@ $(function(){
       "mimeType": "multipart/form-data",
       "data": form
     };
-    
+
     if (myForm.valid()) {
       $('#submit').hide();
       $('.loader').css('display', 'block');
@@ -126,7 +126,8 @@ $(function(){
       });
     }
   })
-  $('#submit').trigger('click');
+
+  // $('#submit').trigger('click');
 });
 
 
