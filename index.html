@@ -26,7 +26,7 @@
                             </div>
                         </div> -->
                         <form id="formContato" action="javascript:void(0);" method="post">
-                            <div class="form-row" style="opacity: 0;height: 0;">
+                            <div class="form-row" style="opacity: 1;height:auto;">
                                 <div class="form-group col-md-2">
                                     <input type="text" name="id" id="id" placeholder="Id" class="">
                                 </div>
@@ -76,18 +76,18 @@
     <script src="assets/js/jquery.mask.min.js"></script>
     <script src="assets/js/jquery.validate.min.js"></script>
     <script src="assets/js/additional-methods.js"></script>
-    <script src="assets/js/scripts.js"></script>
-
+    
     <script>
         let url_string = window.location;
         var url = new URL(url_string);
         let urlClientID = url.searchParams.get("clientId");
         let urlNameClient = url.searchParams.get("nameClient");
         
-
+        
         document.getElementById('id').value = urlClientID;
         document.getElementById('nome').value = urlNameClient;
-    
+        
     </script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
